@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: amaris-technical-test-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - app-amaris-network
+
+
+  frontend:
+    build:
+      context: amaris-technical-test-frontend
+    ports:
+      - "4200:80"
+    networks:
+      - app-amaris-network
+
+networks:
+  app-amaris-network:
+    driver: bridge
